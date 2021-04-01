@@ -16,13 +16,13 @@ const NavBar = () => {
                     </div>
                     <div className="ig-login">
                         Start playing
-                        <img class="ig-login-sym" src="/assets/login.svg"></img>
+                        <img className="ig-login-sym" src="/assets/login.svg" />
                     </div>
                 </div>
             </div>
             <div className="navigation-secondary">
                 <div className="navigation-holder">
-                    <div class="menu-items">
+                    <div className="menu-items">
                         <React.Fragment>
                             <NavLink to={"/home"}>Home</NavLink>
 
