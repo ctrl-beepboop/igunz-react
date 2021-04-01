@@ -6,22 +6,29 @@ const NavBar = () => {
         <React.Fragment>
             <div className="navigation-primary">
                 <div className="navigation-holder">
-                    <div className="ig-logo"></div>
-                    <div className="ig-search"></div>
-                    <div className="ig-login"></div>
+                    <div className="ig-logo">
+                        <img className="ig-logo" src="/assets/logo.png" />
+                    </div>
+                    <div className="ig-search">
+                        {/* OWN COMPONENT */}
+                        <input type="text" placeholder="Search player stats" />
+                        <img className="searchBtn" src="/assets/search.svg" />
+                    </div>
+                    <div className="ig-login">
+                        Start playing
+                        <img class="ig-login-sym" src="/assets/login.svg"></img>
+                    </div>
                 </div>
             </div>
-
             <div className="navigation-secondary">
                 <div className="navigation-holder">
-                    <React.Fragment>
-                        <li>
+                    <div class="menu-items">
+                        <React.Fragment>
                             <NavLink to={"/home"}>Home</NavLink>
-                        </li>
-                        <li>
+
                             <NavLink to={"/shop"}>Shop</NavLink>
-                        </li>
-                    </React.Fragment>
+                        </React.Fragment>
+                    </div>
                 </div>
             </div>
         </React.Fragment>
