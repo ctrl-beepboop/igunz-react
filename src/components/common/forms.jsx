@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Joi from "joi-browser";
+import Joi from "joi";
 
 import InputField from "./form/InputField";
 import SubmitButton from "./form/SubmitButton";
@@ -17,24 +17,35 @@ class Form extends Component {
 
     //TODO: DELETE ERRORS WHEN EXISTING ERRORS BEING HANDLED
     handleChange = ({ currentTarget: input }) => {
-        this.setState({ username: input.value });
+        const data = { ...this.state.data };
+        data[input.name] = input.value;
+
+        this.setState({ data });
     };
 
+    /**
+     *
+     * validates with a Joi Schema
+     * returns a object with field error messages
+     *
+     * @returns object
+     */
     validate = () => {
-        const { error } = Joi.validate(this.state.data, this.schema);
-        console.log(this.state.data);
-        console.log(error);
+        const { error } = this.schema.validate(this.state.data, {
+            abortEarly: false,
+        });
+
+        const errors = {};
+        for (let item of error.details) errors[item.path[0]] = item.message;
+        return errors;
     };
 
     handleSubmit = (e) => {
         e.preventDefault();
+        const errors = this.validate();
+        this.setState({ errors: errors });
 
-        const error = this.validate();
-
-        this.setState({ errors: error || {} });
-
-        //if (error) return;
-        this.submit();
+        if (errors) return;
     };
 
     renderInput(name) {
@@ -42,7 +53,7 @@ class Form extends Component {
             <InputField
                 name={name}
                 onChange={this.handleChange}
-                errors={this.state.errors}
+                errors={this.state.errors[name]}
             />
         );
     }
