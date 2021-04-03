@@ -1,8 +1,15 @@
 import React from "react";
 import Form from "../../../common/forms";
 
+import Joi from "joi-browser";
+
 class RegisterForm extends Form {
-    state = { dara: { username: "", password: "" }, errors: {} };
+    state = { data: { username: "", password: "" }, errors: {} };
+
+    schema = {
+        username: Joi.string().min(5).required(),
+        password: Joi.string().min(5).required(),
+    };
 
     submit = () => {};
 
@@ -11,6 +18,7 @@ class RegisterForm extends Form {
             <React.Fragment>
                 <form onSubmit={this.handleSubmit}>
                     {this.renderInput("username")}
+                    {this.renderInput("password")}
                     {this.renderSubmitButton("submitRegister")}
                 </form>
             </React.Fragment>

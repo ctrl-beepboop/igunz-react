@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import InputField from "./form/InputField";
+import Joi from "joi-browser";
 
+import InputField from "./form/InputField";
 import SubmitButton from "./form/SubmitButton";
 
 class Form extends Component {
@@ -14,12 +15,15 @@ class Form extends Component {
         console.log("Mount");
     }
 
+    //TODO: DELETE ERRORS WHEN EXISTING ERRORS BEING HANDLED
     handleChange = ({ currentTarget: input }) => {
         this.setState({ username: input.value });
     };
 
     validate = () => {
-        return "OHNO";
+        const { error } = Joi.validate(this.state.data, this.schema);
+        console.log(this.state.data);
+        console.log(error);
     };
 
     handleSubmit = (e) => {
