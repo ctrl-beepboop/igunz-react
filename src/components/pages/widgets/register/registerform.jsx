@@ -1,21 +1,21 @@
 import React from "react";
 import Form from "../../../common/forms";
 
-const RegisterForm = () => {
-    const form = new Form();
+class RegisterForm extends Form {
+    state = { dara: { username: "", password: "" }, errors: {} };
 
-    form.state = { data: { username: "", password: "" }, errors: {} };
+    submit = () => {};
 
-    return (
-        <React.Fragment>
-            <form onSubmit={form.handleSubmit}>
-                {form.renderInput("username")}
-                {form.renderInput("password")}
-                {form.renderSubmitButton("submitRegister")}
-                {console.log(form.state)}
-            </form>
-        </React.Fragment>
-    );
-};
+    render() {
+        return (
+            <React.Fragment>
+                <form onSubmit={this.handleSubmit}>
+                    {this.renderInput("username")}
+                    {this.renderSubmitButton("submitRegister")}
+                </form>
+            </React.Fragment>
+        );
+    }
+}
 
 export default RegisterForm;
