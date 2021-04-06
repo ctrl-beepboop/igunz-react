@@ -189,3 +189,166 @@ body {
         }
     }
 }
+
+.welcome {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    font-size: 24px;
+    line-height: 32px;
+    color: #efdbb7;
+    text-shadow: 0 3px 6px RGB(0 0 0 / 84%);
+
+    .welcome-logo {
+        margin-top: 64px;
+        margin-bottom: 32px;
+        width: 300px;
+    }
+
+    p {
+        margin-bottom: 32px;
+    }
+
+    a {
+        text-decoration: none;
+        .new-account {
+            background: linear-gradient(
+                90deg,
+                RGBA(255, 85, 0, 1) 0%,
+                RGBA(255, 163, 0, 1) 100%
+            );
+            border: 1px RGBA(255, 255, 255, 0.2) solid;
+            box-sizing: border-box;
+            height: 40px;
+            padding: 0 20px;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            font-family: "Roboto Condensed";
+            font-size: 16px;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: RGB(71 0 0 / 40%) 0 -1px 0;
+            transition: all 0.2s ease;
+            margin-bottom: 64px;
+        }
+    }
+}
+
+.news {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 10px;
+
+    .title {
+        font-family: "Roboto Condensed";
+        color: #ffffff;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .news-section {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+
+        .section {
+            width: 100%;
+
+            .section-item-big {
+                width: 100%;
+                height: 350px;
+                background: #101215;
+                display: flex;
+                flex-flow: column;
+                justify-content: flex-start;
+                align-items: center;
+
+                .image {
+                    justify-content: center;
+                    display: flex;
+                    align-items: center;
+                    overflow: hidden;
+
+                    img {
+                        width: 100%;
+                        mask-image: linear-gradient(
+                            to bottom,
+                            RGBA(0, 0, 0, 1),
+                            RGBA(0, 0, 0, 0)
+                        );
+                        margin-bottom: 10px;
+                    }
+                }
+                .title {
+                    text-transform: capitalize;
+                    font-size: 28px;
+                    margin-bottom: 10px;
+                    width: 85%;
+                }
+
+                .moreinfo {
+                    color: RGBA(255, 255, 255, 0.65);
+                    font-size: 14px;
+                    width: 85%;
+                }
+            }
+
+            .section-item-small {
+                width: calc(100% - 10px);
+                height: 170px;
+                background: #101215;
+                display: flex;
+                flex-flow: row;
+                justify-content: flex-end;
+                align-items: flex-start;
+                margin-left: 10px;
+                margin-bottom: 10px;
+                flex-grow: 0;
+                flex-shrink: 0;
+                position: relative;
+
+                .image {
+                    height: 100%;
+                    position: absolute;
+                    width: 100%;
+
+                    img {
+                        height: 100%;
+                    }
+                }
+
+                .allinfo {
+                    width: 100%;
+                    height: 100%;
+                    z-index: 10;
+                    display: flex;
+                    justify-content: center;
+                    align-items: flex-end;
+                    flex-flow: column;
+
+                    .title {
+                        text-transform: capitalize;
+                        font-size: 22px;
+                        margin-bottom: 5px;
+                        width: 60%;
+                    }
+
+                    .moreinfo {
+                        color: RGBA(255, 255, 255, 0.65);
+                        font-size: 14px;
+                        width: 60%;
+                        padding-right: 10px;
+                        box-sizing: border-box;
+                    }
+                }
+            }
+        }
+    }
+}

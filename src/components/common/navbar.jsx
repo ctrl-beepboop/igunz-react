@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const NavBar = () => {
     return (
@@ -7,16 +7,28 @@ const NavBar = () => {
             <div className="navigation-primary">
                 <div className="navigation-holder">
                     <div className="ig-logo">
-                        <img className="ig-logo" src="/assets/logo.png" />
+                        <img
+                            className="ig-logo"
+                            src="/assets/logo.png"
+                            alt="Logo"
+                        />
                     </div>
                     <div className="ig-search">
                         {/* OWN COMPONENT */}
                         <input type="text" placeholder="Search player stats" />
-                        <img className="searchBtn" src="/assets/search.svg" />
+                        <img
+                            className="searchBtn"
+                            src="/assets/search.svg"
+                            alt="Searchlogo"
+                        />
                     </div>
                     <div className="ig-login">
                         Start playing
-                        <img className="ig-login-sym" src="/assets/login.svg" />
+                        <img
+                            className="ig-login-sym"
+                            src="/assets/login.svg"
+                            alt="Login Button"
+                        />
                     </div>
                 </div>
             </div>
