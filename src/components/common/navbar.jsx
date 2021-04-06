@@ -1,7 +1,9 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link, useLocation } from "react-router-dom";
 
 const NavBar = () => {
+    let location = useLocation();
+
     return (
         <React.Fragment>
             <div className="navigation-primary">
@@ -37,8 +39,14 @@ const NavBar = () => {
                     <div className="menu-items">
                         <React.Fragment>
                             <NavLink to={"/home"}>Home</NavLink>
-
-                            <NavLink to={"/shop"}>Shop</NavLink>
+                            <Link
+                                to={{
+                                    pathname: "/login",
+                                    state: { background: location },
+                                }}
+                            >
+                                Login
+                            </Link>
                         </React.Fragment>
                     </div>
                 </div>
