@@ -168,3 +168,24 @@ body {
         }
     }
 }
+
+.register-formular {
+    .input-title {
+        color: #efdbb7;
+        text-shadow: 0 3px 6px RGB(0 0 0 / 84%);
+        font-size: 18px;
+    }
+
+    input {
+        width: 200px;
+        border: none;
+        height: 25px;
+    }
+
+    .helper-text {
+        &.input-error {
+            color: #efdbb7;
+            text-shadow: 0 3px 6px RGB(0 0 0 / 84%);
+        }
+    }
+}

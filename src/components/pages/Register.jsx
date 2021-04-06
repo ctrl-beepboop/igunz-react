@@ -8,8 +8,9 @@ const Register = () => {
                 <div className="main-box register-box">
                     <h2>
                         Be part of iGunz! Create your account complete free!
-                        <RegisterForm />
                     </h2>
+
+                    <RegisterForm />
                 </div>
             </div>
         </React.Fragment>
