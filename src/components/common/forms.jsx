@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import Joi from "joi";
 
 import InputField from "./form/InputField";
-import SubmitButton from "./form/SubmitButton";
 
 class Form extends Component {
     state = { data: {}, errors: {} };

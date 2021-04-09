@@ -47,6 +47,9 @@ const NavBar = () => {
                             >
                                 Login
                             </Link>
+                            <NavLink to={"/create-account"}>
+                                Create Account
+                            </NavLink>
                         </React.Fragment>
                     </div>
                 </div>

@@ -1,7 +1,8 @@
 import React from "react";
 import Form from "../../../common/forms";
-
 import Joi from "joi";
+
+import userService from "../../../../services/userService";
 
 class RegisterForm extends Form {
     state = {
@@ -24,8 +25,19 @@ class RegisterForm extends Form {
         repassword: Joi.ref("password"),
     });
 
+    // Everything success!
     submit = () => {
-        console.log("gut ja");
+        userService.registerUser(this.state.data).then((response) => {
+            if (!response.status === 200) {
+                console.log("user registered");
+                return true;
+            }
+
+            this.setState({
+                errors: "Ein unerwarteter Fehler ist aufgetreten",
+            });
+            console.log(this.state);
+        });
     };
 
     render() {
