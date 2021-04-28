@@ -5,10 +5,12 @@ import Joi from "joi";
 import userService from "../../../../services/userService";
 
 const RegisterForm = () => {
-    const [username, setUsername] = useState(0);
-    const [email, setEmail] = useState(0);
-    const [password, setPassword] = useState(0);
-    const [repassword, setRepassword] = useState(0);
+    const [values, setValue] = useState({
+        username: "",
+        email: "",
+        password: "",
+        repassword: "",
+    });
 
     const schema = Joi.object({
         username: Joi.string().min(5).required().messages({
@@ -28,32 +30,16 @@ const RegisterForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        console.log(schema.validate({ username }));
+        console.log(values);
     };
 
     const handleFormularChange = (e) => {
         e.preventDefault();
 
-        const formularName = e.target.name;
-        const formularValue = e.target.value;
+        const inputName = e.target.name;
+        const inputValue = e.target.value;
 
-        switch (formularName) {
-            case "username":
-                setUsername(formularValue);
-                break;
-
-            case "email":
-                setEmail(formularValue);
-                break;
-
-            case "password":
-                setPassword(formularValue);
-                break;
-
-            case "repassword":
-                setRepassword(formularValue);
-                break;
-        }
+        setValue({ ...values, [inputName]: inputValue });
     };
 
     return (
