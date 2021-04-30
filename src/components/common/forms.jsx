@@ -79,7 +79,7 @@ class Form extends Component {
 
     renderSubmitButton(name) {
         return (
-            <button type="submit" name={name}>
+            <button type='submit' name={name}>
                 Senden
             </button>
         );

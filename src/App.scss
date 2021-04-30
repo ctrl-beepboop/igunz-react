@@ -67,11 +67,7 @@ body {
     }
 
     .ig-login {
-        background: linear-gradient(
-            90deg,
-            RGBA(255, 85, 0, 1) 0%,
-            RGBA(255, 163, 0, 1) 100%
-        );
+        background: linear-gradient(90deg, RGBA(255, 85, 0, 1) 0%, RGBA(255, 163, 0, 1) 100%);
         border: 1px RGBA(255, 255, 255, 0.1) solid;
         box-sizing: border-box;
         height: 50%;
@@ -214,11 +210,7 @@ body {
     a {
         text-decoration: none;
         .new-account {
-            background: linear-gradient(
-                90deg,
-                RGBA(255, 85, 0, 1) 0%,
-                RGBA(255, 163, 0, 1) 100%
-            );
+            background: linear-gradient(90deg, RGBA(255, 85, 0, 1) 0%, RGBA(255, 163, 0, 1) 100%);
             border: 1px RGBA(255, 255, 255, 0.2) solid;
             box-sizing: border-box;
             height: 40px;
@@ -278,11 +270,7 @@ body {
 
                     img {
                         width: 100%;
-                        mask-image: linear-gradient(
-                            to bottom,
-                            RGBA(0, 0, 0, 1),
-                            RGBA(0, 0, 0, 0)
-                        );
+                        mask-image: linear-gradient(to bottom, RGBA(0, 0, 0, 1), RGBA(0, 0, 0, 0));
                         margin-bottom: 10px;
                     }
                 }
@@ -388,4 +376,8 @@ body {
             }
         }
     }
+}
+
+.errorMessage {
+    color: red;
 }
