@@ -22,6 +22,8 @@ const RegisterForm = () => {
             <Formular method='post' schema={schema} formularObject={formularObject}>
                 <TextInput name='username' label='Username' />
                 <TextInput name='email' label='Email' />
+                <TextInput name='password' label='Password' />
+                <TextInput name='repassword' label='Re-Password' />
             </Formular>
         </>
     );

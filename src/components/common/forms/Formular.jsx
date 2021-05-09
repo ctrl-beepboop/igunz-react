@@ -3,7 +3,6 @@ import Joi from "joi";
 
 const Formular = (props) => {
     const [value, setValue] = useState(props.formularObject);
-
     const [inputError, setError] = useState(props.formularObject);
 
     const handleFormularChange = (e) => {
