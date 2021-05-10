@@ -1,6 +1,7 @@
 import Formular from "./Formular";
 import Joi from "joi";
 import TextInput from "../widgets/TextInput";
+import SubmitButton from "../widgets/SubmitButton";
 
 const RegisterFormular = () => {
     const schema = Joi.object({
@@ -18,7 +19,7 @@ const RegisterFormular = () => {
     };
 
     return (
-        <Formular formularObject={formularObject} schema={schema} method='post'>
+        <Formular formularObject={formularObject} schema={schema} label='Register' method='post'>
             <TextInput name='username' label='Username' />
             <TextInput name='email' label='E-Mail Adress' />
             <TextInput name='password' label='Password' type='password' />
