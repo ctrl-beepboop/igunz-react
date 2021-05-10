@@ -381,3 +381,7 @@ body {
 .errorMessage {
     color: red;
 }
+
+button.inactive {
+    pointer-events: none;
+}
