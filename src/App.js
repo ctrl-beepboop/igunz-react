@@ -27,7 +27,7 @@ function App() {
                 <Redirect exact from={"/"} to={"/home"} />
             </Switch>
 
-            {background && <Route path="/login" children={<Login />} />}
+            {background && <Route path='/login' children={<Login />} />}
         </React.Fragment>
     );
 }

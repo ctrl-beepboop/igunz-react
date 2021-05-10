@@ -11,7 +11,18 @@ const Formular = (props) => {
         const inputName = e.target.name;
         const inputValue = e.target.value;
 
-        const { error } = props.schema.validate({ [inputName]: inputValue });
+        const dataToValidate = { [inputName]: inputValue };
+
+        props.children.map((child) => {
+            let refField = "";
+
+            if (child.props["name"] === inputName && child.props["valueRef"] !== undefined) {
+                refField = child.props["valueRef"];
+                dataToValidate[refField] = value[refField];
+            }
+        });
+
+        const { error } = props.schema.validate(dataToValidate);
 
         let errorMessage = "";
 
