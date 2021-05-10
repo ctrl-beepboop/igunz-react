@@ -19,8 +19,15 @@ const RegisterFormular = () => {
 
     return (
         <Formular formularObject={formularObject} schema={schema} method='post'>
-            <TextInput name='password' label='Password' />
-            <TextInput name='repassword' label='Revalidate Password' valueRef='password' />
+            <TextInput name='username' label='Username' />
+            <TextInput name='email' label='E-Mail Adress' />
+            <TextInput name='password' label='Password' type='password' />
+            <TextInput
+                name='repassword'
+                label='Revalidate Password'
+                type='password'
+                valueRef='password'
+            />
         </Formular>
     );
 };

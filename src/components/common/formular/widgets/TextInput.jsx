@@ -6,7 +6,11 @@ const TextInput = (props) => {
             <div className={"input-" + props.name}>
                 <label htmlFor={props.name}>{props.label}</label>
                 <br />
-                <input type='text' name={props.name} placeholder={props.name + "..."} />
+                <input
+                    type={props.type ? props.type : "text"}
+                    name={props.name}
+                    placeholder={props.name + "..."}
+                />
                 <p className='errorMessage'>{props.inputError[props.name]}</p>
             </div>
             <br />
